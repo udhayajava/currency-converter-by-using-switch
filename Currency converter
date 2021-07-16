@@ -1,0 +1,45 @@
+import java.util.*;
+import java.text.DecimalFormat;
+class Main{
+public static void main(String[] args){
+DecimalFormat f=new DecimalFormat("##.###");
+Scanner input=new Scanner(System.in);
+    System.out.println("Enter the currency code \n1:Rupees\n2:Dollar\n3:Euro");
+    int num=input.nextInt();
+    switch(num){
+        case 1:
+            System.out.println("Enter amount in rupees inr");
+            double rupee=input.nextFloat();
+            double dollar=rupee/74.85;
+            System.out.println("Dollar:$="+f.format(dollar));
+             double euro=rupee/90.91;
+System.out.println("Euro:£="+f.format(euro));
+ 
+            break;
+        case 2:
+            System.out.println("Enter amount in dollar $");
+            dollar=input.nextFloat();
+            rupee=dollar*74.85;
+            System.out.println("Rupees:inr="+f.format(rupee));
+     
+            euro=dollar*0.84;
+            System.out.println("Euro:£="+f.format(euro));
+            
+            break;
+        
+        case 3:
+            System.out.println("Enter amount in Euro £");
+            euro=input.nextFloat();
+            rupee=euro*88.65;
+            System.out.println("Rupees:inr="+f.format(rupee));
+            dollar=euro*1.18;
+            System.out.println("Dollar:=$"+f.format(dollar));
+    
+
+          break ;
+  
+        default:
+            System.out.println("Error");
+    }
+}
+}
